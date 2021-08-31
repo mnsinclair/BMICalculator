@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 const bottomContainerHeight = 80.0;
 const bottomContainerColor = Color(0xFFEB1555);
@@ -22,10 +23,16 @@ class _InputPageState extends State<InputPage> {
               child: Row(
                 children: [
                   Expanded(
-                    child: ReusableCard(color: cardColor),
+                    child: ReusableCard(
+                      color: cardColor,
+                      cardChild: GenderPicker(isMale: true),
+                    ),
                   ),
                   Expanded(
-                    child: ReusableCard(color: cardColor),
+                    child: ReusableCard(
+                      color: cardColor,
+                      cardChild: GenderPicker(isMale: false),
+                    ),
                   )
                 ],
               ),
@@ -53,6 +60,43 @@ class _InputPageState extends State<InputPage> {
             )
           ],
         ));
+  }
+}
+
+class GenderPicker extends StatelessWidget {
+  // const GenderPicker({
+  //   Key key,
+  // }) : super(key: key);
+
+  GenderPicker({@required this.isMale});
+
+  final bool isMale;
+
+  @override
+  Widget build(BuildContext context) {
+    Icon genderIcon;
+    String genderString;
+    if (isMale) {
+      genderIcon = Icon(
+        FontAwesomeIcons.mars,
+        size: 80.0,
+      );
+      genderString = "MALE";
+    } else {
+      genderIcon = Icon(
+        FontAwesomeIcons.venus,
+        size: 80.0,
+      );
+      genderString = "FEMALE";
+    }
+
+    return Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+      genderIcon,
+      SizedBox(
+        height: 15.0,
+      ),
+      Text(genderString, style: TextStyle(fontSize: 18, color: Color(0xFF8D8E98)))
+    ]);
   }
 }
 
