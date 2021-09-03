@@ -19,13 +19,12 @@ class InputPage extends StatefulWidget {
 }
 
 class _InputPageState extends State<InputPage> {
-  Color maleColor;
-  Color femaleColor;
+  Gender selectedGender;
 
-  void updateGenderColor({Gender selectedGender}) {
-    maleColor = selectedGender == Gender.male ? ACTIVE_CARD_COLOR : INACTIVE_CARD_COLOR;
-    femaleColor = selectedGender == Gender.female ? ACTIVE_CARD_COLOR : INACTIVE_CARD_COLOR;
-  }
+  // void updateGenderColor({Gender selectedGender}) {
+  //   maleColor = selectedGender == Gender.male ? ACTIVE_CARD_COLOR : INACTIVE_CARD_COLOR;
+  //   femaleColor = selectedGender == Gender.female ? ACTIVE_CARD_COLOR : INACTIVE_CARD_COLOR;
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +40,9 @@ class _InputPageState extends State<InputPage> {
                   Expanded(
                     child: GestureDetector(
                         child: ReusableCard(
-                          color: maleColor,
+                          color: selectedGender == Gender.male
+                              ? ACTIVE_CARD_COLOR
+                              : INACTIVE_CARD_COLOR,
                           cardChild: IconContent(
                               icon: Icon(
                                 FontAwesomeIcons.mars,
@@ -51,14 +52,16 @@ class _InputPageState extends State<InputPage> {
                         ),
                         onTap: () {
                           setState(() {
-                            updateGenderColor(selectedGender: Gender.male);
+                            selectedGender = Gender.male;
                           });
                         }),
                   ),
                   Expanded(
                     child: GestureDetector(
                         child: ReusableCard(
-                          color: femaleColor,
+                          color: selectedGender == Gender.female
+                              ? ACTIVE_CARD_COLOR
+                              : INACTIVE_CARD_COLOR,
                           cardChild: IconContent(
                             icon: Icon(
                               FontAwesomeIcons.venus,
@@ -69,7 +72,7 @@ class _InputPageState extends State<InputPage> {
                         ),
                         onTap: () {
                           setState(() {
-                            updateGenderColor(selectedGender: Gender.female);
+                            selectedGender = Gender.female;
                           });
                         }),
                   )
