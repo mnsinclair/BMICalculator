@@ -3,9 +3,10 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'reusable_card.dart';
 import 'icon_content.dart';
 
-const bottomContainerHeight = 80.0;
-const bottomContainerColor = Color(0xFFEB1555);
-const cardColor = Color(0xFF1D1E33);
+const BOTTOM_CONTAINER_HEIGHT = 80.0;
+const ICON_FONT_SIZE = 80.0;
+const BOTTOM_CONTAINER_COLOR = Color(0xFFEB1555);
+const CARD_COLOR = Color(0xFF1D1E33);
 
 class InputPage extends StatefulWidget {
   @override
@@ -26,22 +27,22 @@ class _InputPageState extends State<InputPage> {
                 children: [
                   Expanded(
                     child: ReusableCard(
-                      color: cardColor,
+                      color: CARD_COLOR,
                       cardChild: IconContent(
                           icon: Icon(
                             FontAwesomeIcons.mars,
-                            size: 80.0,
+                            size: ICON_FONT_SIZE,
                           ),
                           label: "MALE"),
                     ),
                   ),
                   Expanded(
                     child: ReusableCard(
-                      color: cardColor,
+                      color: CARD_COLOR,
                       cardChild: IconContent(
                         icon: Icon(
                           FontAwesomeIcons.venus,
-                          size: 80.0,
+                          size: ICON_FONT_SIZE,
                         ),
                         label: "FEMALE",
                       ),
@@ -51,25 +52,25 @@ class _InputPageState extends State<InputPage> {
               ),
             ),
             Expanded(
-              child: ReusableCard(color: cardColor),
+              child: ReusableCard(color: CARD_COLOR),
             ),
             Expanded(
               child: Row(
                 children: [
                   Expanded(
-                    child: ReusableCard(color: cardColor),
+                    child: ReusableCard(color: CARD_COLOR),
                   ),
                   Expanded(
-                    child: ReusableCard(color: cardColor),
+                    child: ReusableCard(color: CARD_COLOR),
                   )
                 ],
               ),
             ),
             Container(
-              color: bottomContainerColor,
+              color: BOTTOM_CONTAINER_COLOR,
               margin: EdgeInsets.only(top: 10.0),
               width: double.infinity,
-              height: bottomContainerHeight,
+              height: BOTTOM_CONTAINER_HEIGHT,
             )
           ],
         ));
