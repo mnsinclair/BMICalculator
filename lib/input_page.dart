@@ -2,16 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'reusable_card.dart';
 import 'icon_content.dart';
-
-const BOTTOM_CONTAINER_HEIGHT = 80.0;
-const ICON_FONT_SIZE = 80.0;
-const BOTTOM_CONTAINER_COLOR = Color(0xFFEB1555);
-const ACTIVE_CARD_COLOR = Color(0xFF1D1E33);
-const INACTIVE_CARD_COLOR = Color(0xFF111328);
-enum Gender {
-  male,
-  female,
-}
+import 'constants.dart';
 
 class InputPage extends StatefulWidget {
   @override

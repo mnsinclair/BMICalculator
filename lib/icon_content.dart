@@ -1,4 +1,6 @@
+import 'package:bmi_calculator/constants.dart';
 import 'package:flutter/material.dart';
+import 'constants.dart';
 
 class IconContent extends StatelessWidget {
   // const GenderPicker({
@@ -17,7 +19,7 @@ class IconContent extends StatelessWidget {
       SizedBox(
         height: 15.0,
       ),
-      Text(label, style: TextStyle(fontSize: 18, color: Color(0xFF8D8E98)))
+      Text(label, style: LABEL_TEXT_STYLE)
     ]);
   }
 }
