@@ -8,7 +8,10 @@ const ICON_FONT_SIZE = 80.0;
 const BOTTOM_CONTAINER_COLOR = Color(0xFFEB1555);
 const ACTIVE_CARD_COLOR = Color(0xFF1D1E33);
 const INACTIVE_CARD_COLOR = Color(0xFF111328);
-enum Gender { male, female, }
+enum Gender {
+  male,
+  female,
+}
 
 class InputPage extends StatefulWidget {
   @override
@@ -16,18 +19,16 @@ class InputPage extends StatefulWidget {
 }
 
 class _InputPageState extends State<InputPage> {
-
   Color maleColor;
   Color femaleColor;
 
   void updateGenderColor({Gender selectedGender}) {
-    if (selectedGender == Gender.male) {
-      maleColor = ACTIVE_CARD_COLOR;
-      femaleColor = INACTIVE_CARD_COLOR;
-    } else {
-      maleColor = INACTIVE_CARD_COLOR;
-      femaleColor = ACTIVE_CARD_COLOR;
-    }
+    selectedGender == Gender.male
+        ? maleColor = ACTIVE_CARD_COLOR
+        : maleColor = INACTIVE_CARD_COLOR;
+    selectedGender == Gender.female
+        ? femaleColor = ACTIVE_CARD_COLOR
+        : femaleColor = INACTIVE_CARD_COLOR;
   }
 
   @override
@@ -56,8 +57,7 @@ class _InputPageState extends State<InputPage> {
                           setState(() {
                             updateGenderColor(selectedGender: Gender.male);
                           });
-                        }
-                    ),
+                        }),
                   ),
                   Expanded(
                     child: GestureDetector(
@@ -75,8 +75,7 @@ class _InputPageState extends State<InputPage> {
                           setState(() {
                             updateGenderColor(selectedGender: Gender.female);
                           });
-                        }
-                    ),
+                        }),
                   )
                 ],
               ),
