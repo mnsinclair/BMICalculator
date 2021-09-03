@@ -36,12 +36,12 @@ class _InputPageState extends State<InputPage> {
                         });
                       },
                       color: selectedGender == Gender.male
-                          ? ACTIVE_CARD_COLOR
-                          : INACTIVE_CARD_COLOR,
+                          ? kActiveCardColor
+                          : kInactiveCardColor,
                       cardChild: IconContent(
                           icon: Icon(
                             FontAwesomeIcons.mars,
-                            size: ICON_FONT_SIZE,
+                            size: kIconFontSize,
                           ),
                           label: "MALE"),
                     ),
@@ -54,12 +54,12 @@ class _InputPageState extends State<InputPage> {
                         });
                       },
                       color: selectedGender == Gender.female
-                      ? ACTIVE_CARD_COLOR
-                          : INACTIVE_CARD_COLOR,
+                      ? kActiveCardColor
+                          : kInactiveCardColor,
                       cardChild: IconContent(
                         icon: Icon(
                           FontAwesomeIcons.venus,
-                          size: ICON_FONT_SIZE,
+                          size: kIconFontSize,
                         ),
                         label: "FEMALE",
                       ),
@@ -69,25 +69,25 @@ class _InputPageState extends State<InputPage> {
               ),
             ),
             Expanded(
-              child: ReusableCard(color: ACTIVE_CARD_COLOR),
+              child: ReusableCard(color: kActiveCardColor),
             ),
             Expanded(
               child: Row(
                 children: [
                   Expanded(
-                    child: ReusableCard(color: ACTIVE_CARD_COLOR),
+                    child: ReusableCard(color: kActiveCardColor),
                   ),
                   Expanded(
-                    child: ReusableCard(color: ACTIVE_CARD_COLOR),
+                    child: ReusableCard(color: kActiveCardColor),
                   )
                 ],
               ),
             ),
             Container(
-              color: BOTTOM_CONTAINER_COLOR,
+              color: kBottomContainerColor,
               margin: EdgeInsets.only(top: 10.0),
               width: double.infinity,
-              height: BOTTOM_CONTAINER_HEIGHT,
+              height: kBottomContainerHeight,
             )
           ],
         ));
